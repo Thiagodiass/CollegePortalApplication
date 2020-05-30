@@ -75,5 +75,18 @@ if the user tap in the data going to open the page with the details that he also
 #### Compatibility
 As an application build in Xamarin Forms you can easily compile in different Operation System you can debug in IOS iPhone from SE to 11 Pro Also Android From API 19 To 29 version bellow 19 is not supported.
 
+## How to Setup and Debug this project
+### Donwload the project
+### Open the Download Folder
+### initializate the file CollegePortalApplication.sln
+
+![Setup](https://user-images.githubusercontent.com/36368115/83334327-94e7b600-a29d-11ea-99bf-e3eaa3bf7f76.gif)
+
+### After Open Visual Studio
+### Set IOS or Android Solution As A Startup Project
+### Click to Debug
+
+![Debug](https://user-images.githubusercontent.com/36368115/83334384-1d665680-a29e-11ea-8208-f37ebd423b47.gif)
+
 #### License
 Copyright 2020 - Thiago Dias Dos Santos
