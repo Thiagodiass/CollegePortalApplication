@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    Padding="0,40,0,0"
+    BackgroundColor="#9FC3E3"
+    xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CollegePortalApplication.Views.Administrator.DetailPages.StaffDetailPage">
+   <StackLayout BackgroundColor="#9FC3E3" Padding="0,0,0,0">
+         <Button x:Name="back" Text="Back" Clicked="back_Clicked" HorizontalOptions="Start" Padding="30,0,0,0"/>
+                
+        <TableView Intent="Form" BackgroundColor="#9FC3E3">
+		    <TableRoot>
+			    <TableSection Title="Staff Informations" TextColor="#F2C651">
+				    <EntryCell Label="Staff ID" Text="{Binding Path=Staff.staffID}" Placeholder="  Insert StaffID" LabelColor="#0F304C" />
+                    <EntryCell Label="First Name" Text="{Binding Path=Staff.firstName}" Placeholder="  Insert First Name" LabelColor="#0F304C" />
+                    <EntryCell Label="Last Name" Text="{Binding Path=Staff.lastName}" Placeholder="  Insert Last Name" LabelColor="#0F304C" />
+                    <EntryCell Label="Phone Number" Text="{Binding Path=Staff.phoneNumber}" Placeholder="  Insert Phone Number" LabelColor="#0F304C" />
+                    <EntryCell Label="Email" Text="{Binding Path=Staff.email}" Placeholder="  Insert Email" LabelColor="#0F304C" />
+                    <EntryCell Label="Day Of Birth" Text="{Binding Path=Staff.dayOfBirth}" Placeholder="  Insert Day of Birth" LabelColor="#0F304C" />
+                    <EntryCell Label="Gender" Text="{Binding Path=Staff.gender}" Placeholder="  Insert Gender" LabelColor="#0F304C" />
+                    <EntryCell Label="ID Number" Text="{Binding Path=Staff.idNumber}" Placeholder="  Insert ID Number" LabelColor="#0F304C" />
+                    <EntryCell Label="Password" Text="{Binding Path=Staff.password}" Placeholder="  Insert Password" LabelColor="#0F304C" />
+                    <EntryCell Label="Account Type" Text="{Binding Path=Staff.accountType}" Placeholder="  Insert StaffID" LabelColor="#0F304C" />
+			    </TableSection>
+			<TableSection Title="Address Informations" TextColor="#F2C651">
+				    <EntryCell Label="Street" Text="{Binding Path=Staff.street}" Placeholder="  Insert Street" LabelColor="#0F304C" />
+                    <EntryCell Label="Postcode" Text="{Binding Path=Staff.postCode}" Placeholder="  Insert PostCode" LabelColor="#0F304C" />
+                    <EntryCell Label="City" Text="{Binding Path=Staff.city}" Placeholder="  Insert City" LabelColor="#0F304C" />
+			    </TableSection>
+                <TableSection Title="Account Informations" TextColor="#F2C651">
+				    <EntryCell Label="Status Of Account" Text="{Binding Path=Staff.active}" Placeholder="  Insert Status od Account" LabelColor="#0F304C" />
+			    </TableSection>
+			    <TableSection>
+				    <ViewCell>
+					    <Button Text="Save" Command="{Binding SaveCommand}" />
+				    </ViewCell>
+			    </TableSection>
+		    </TableRoot>
+	    </TableView>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    Padding="0,40,0,0"
+    BackgroundColor="#9FC3E3"
+    xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CollegePortalApplication.Views.Administrator.DetailPages.AttendanceDetailPage">
+
+    <StackLayout BackgroundColor="#9FC3E3" Padding="0,0,0,0">
+         <Button x:Name="back" Text="Back" Clicked="back_Clicked" HorizontalOptions="Start" Padding="30,0,0,0"/>
+                
+        <TableView Intent="Form" BackgroundColor="#9FC3E3">
+		    <TableRoot>
+			    <TableSection Title="Student Informations" TextColor="#F2C651">
+				    <EntryCell Label="Student ID" Text="{Binding Path=Attendance.studentID}" Placeholder="Insert StudentID" LabelColor="#0F304C" />
+			    </TableSection>
+                <TableSection Title="Module Informations" TextColor="#F2C651">
+				    <EntryCell Label="Module ID" Text="{Binding Path=Attendance.moduleID}" Placeholder="  Insert ModuleID" LabelColor="#0F304C" />
+			    </TableSection>
+                <TableSection Title="Attendance to the Class" TextColor="#F2C651">
+                    <EntryCell Label="Present" Text="{Binding Path=Attendance.present}" Placeholder="  Insert Present" LabelColor="#0F304C" />
+				    <EntryCell Label="Late" Text="{Binding Path=Attendance.late}" Placeholder="Insert Present" LabelColor="#0F304C" />
+                    <EntryCell Label="Absent" Text="{Binding Path=Attendance.absent}" Placeholder="  Insert Absent" LabelColor="#0F304C" />
+                    <EntryCell Label="Excused" Text="{Binding Path=Attendance.excused}" Placeholder="  Insert excused" LabelColor="#0F304C" />
+			    </TableSection>
+                <TableSection Title="Date" TextColor="#F2C651">
+				    <EntryCell Label="Date" Text="{Binding Path=Attendance.date}" Placeholder="Insert Date" LabelColor="#0F304C" />
+			    </TableSection>
+			
+			    <TableSection>
+				    <ViewCell>
+					    <Button Text="Save" Command="{Binding SaveCommand}" />
+				    </ViewCell>
+			    </TableSection>
+		    </TableRoot>
+	    </TableView>
+    </StackLayout>
+</ContentPage>

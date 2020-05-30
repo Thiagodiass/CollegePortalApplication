@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    Padding="0,40,0,0"
+    BackgroundColor="#9FC3E3"
+    xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CollegePortalApplication.Views.Administrator.DetailPages.ActivitiesDetailPage">
+
+    <StackLayout BackgroundColor="#9FC3E3" Padding="0,0,0,0">
+         <Button x:Name="back" Text="Back" Clicked="back_Clicked" HorizontalOptions="Start" Padding="30,0,0,0"/>
+                
+        <TableView Intent="Form" BackgroundColor="#9FC3E3">
+		    <TableRoot>
+			    <TableSection Title="Student Activities" TextColor="#F2C651">
+				    <EntryCell Label="Module ID" Text="{Binding Path=Activities.moduleID}" Placeholder="  Insert ModuleID" LabelColor="#0F304C" />
+				    <EntryCell Label="Student ID" Text="{Binding Path=Activities.studentID}" Placeholder="Insert StudentID" LabelColor="#0F304C" />
+                    <EntryCell Label="Type" Text="{Binding Path=Activities.type}" Placeholder="  Insert Type" LabelColor="#0F304C" />
+				    <EntryCell Label="Grade" Text="{Binding Path=Activities.grade}" Placeholder="Insert Grade" LabelColor="#0F304C" />
+                    <EntryCell Label="Weight" Text="{Binding Path=Activities.weight}" Placeholder="  Insert Weight" LabelColor="#0F304C" />
+				    <EntryCell Label="DueDate" Text="{Binding Path=Activities.dueDate}" Placeholder="Insert Due Date" LabelColor="#0F304C" />
+			    </TableSection>
+			
+			    <TableSection>
+				    <ViewCell>
+					    <Button Text="Save" Command="{Binding SaveCommand}" />
+				    </ViewCell>
+			    </TableSection>
+		    </TableRoot>
+	    </TableView>
+    </StackLayout>
+</ContentPage>

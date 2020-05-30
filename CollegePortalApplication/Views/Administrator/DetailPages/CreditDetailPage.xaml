@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    Padding="0,40,0,0"
+    BackgroundColor="#9FC3E3"
+    xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CollegePortalApplication.Views.Administrator.DetailPages.CreditDetailPage">
+    <StackLayout BackgroundColor="#9FC3E3" Padding="0,0,0,0">
+         <Button x:Name="back" Text="Back" Clicked="back_Clicked" HorizontalOptions="Start" Padding="30,0,0,0"/>
+                
+        <TableView Intent="Form" BackgroundColor="#9FC3E3">
+		    <TableRoot>
+			    <TableSection Title="Credit Informations" TextColor="#F2C651">
+				    <EntryCell Label="Credit ID" Text="{Binding Path=Credit.creditID}" Placeholder="  Insert CreditID" LabelColor="#0F304C" />
+				    <EntryCell Label="Weekly Class" Text="{Binding Path=Credit.classesWeekly}" Placeholder="Insert Number of Classes Weekly" LabelColor="#0F304C" />
+			    </TableSection>
+			
+			    <TableSection>
+				    <ViewCell>
+					    <Button Text="Save" Command="{Binding SaveCommand}" />
+				    </ViewCell>
+			    </TableSection>
+		    </TableRoot>
+	    </TableView>
+    </StackLayout>
+</ContentPage>

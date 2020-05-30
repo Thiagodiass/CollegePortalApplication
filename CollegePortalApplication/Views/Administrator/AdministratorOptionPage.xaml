@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    Padding="0,40,0,0"
+    NavigationPage.HasNavigationBar="False"
+    NavigationPage.HasBackButton="False"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CollegePortalApplication.Views.Administrator.AdministratorOptionPage"
+    BackgroundColor="#0F304C">
+
+    <ContentPage.Resources>
+    <ResourceDictionary>
+            <Style x:Key="button" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#143D60"/>
+                <Setter Property="TextColor" Value="#FFFFFF"/>
+                <Setter Property="BorderRadius" Value="5"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="WidthRequest" Value="300"/>
+                <Setter Property="HeightRequest" Value="40"/>
+            </Style>
+            <Style x:Key="primaryButton" TargetType="Button" BasedOn="{StaticResource button}">
+                <Setter Property="BackgroundColor" Value="#F2C651"/>
+            </Style>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+  
+    
+               
+    <ScrollView BackgroundColor="#0F304C" Padding="0">
+            <RelativeLayout BackgroundColor="#0F304C">
+                <Button x:Name="back" Text="Back" Clicked="back_Clicked"
+                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=1,Constant=20}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Factor=1, Property=Y, Constant=0}"/>
+
+                <Label Text="ADMINISTRATOR" TextColor="#FFF" FontSize="50"
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5,Constant=-190}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=back, Factor=1, Property=Y, Constant=100}"/>
+                <Label Text="P" TextColor="#F2C651" FontSize="40" 
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5,Constant=-188}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=back, Factor=1, Property=Y, Constant=65}"/>
+                 <Label Text="N" TextColor="#F2C651" FontSize="40" 
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5,Constant=-188}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=back, Factor=1, Property=Y, Constant=150}"/>
+                <Label Text="E" TextColor="#F2C651" FontSize="40" 
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5,Constant=-188}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=back, Factor=1, Property=Y, Constant=190}"/>
+                <Label Text="L" TextColor="#F2C651" FontSize="40" 
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5,Constant=-188}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=back, Factor=1, Property=Y, Constant=235}"/>
+ 
+                <Label Text="Choose a panel option" TextColor="#FFF" FontSize="Title"
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5,Constant=-130}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=picker, Factor=1, Property=Y, Constant=-40}"/>
+
+                <Picker x:Name="picker"
+                    HeightRequest ="40"
+                            WidthRequest="300"
+                            Title="Choose a panel."
+                            ItemsSource="{Binding Options}"
+                            ItemDisplayBinding="{Binding OptionName}"
+                            SelectedItem="{Binding SelectedOption}"
+                            BackgroundColor="#FFFFFF"
+                            
+                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5,Constant=-147.5}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=continue, Factor=1, Property=Y, Constant=-50}"/>
+           
+                    
+                    <Button x:Name="continue" Text="CONTINUE" Command="{Binding ContinueSelected}"
+                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.5,Constant=-147.5}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Factor=0.8, Property=Height, Constant=-50}"
+                            Style="{StaticResource primaryButton}" 
+                            />
+
+            </RelativeLayout>
+        </ScrollView>
+</ContentPage>

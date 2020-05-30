@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    Padding="0,40,0,0"
+    BackgroundColor="#9FC3E3"
+    xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CollegePortalApplication.Views.Administrator.DetailPages.StudentDetailPage">
+    <StackLayout BackgroundColor="#9FC3E3" Padding="0,0,0,0">
+         <Button x:Name="back" Text="Back" Clicked="back_Clicked" HorizontalOptions="Start" Padding="30,0,0,0"/>
+                
+        <TableView Intent="Form" BackgroundColor="#9FC3E3">
+		    <TableRoot>
+			    <TableSection Title="Student Informations" TextColor="#F2C651">
+				    <EntryCell Label="Student ID" Text="{Binding Path=Student.studentID}" Placeholder="  Insert StudentID" LabelColor="#0F304C" />
+                    <EntryCell Label="First Name" Text="{Binding Path=Student.firstName}" Placeholder="  Insert First Name" LabelColor="#0F304C" />
+                    <EntryCell Label="Last Name" Text="{Binding Path=Student.lastName}" Placeholder="  Insert Last Name" LabelColor="#0F304C" />
+                    <EntryCell Label="Phone Number" Text="{Binding Path=Student.phoneNumber}" Placeholder="  Insert Phone Number" LabelColor="#0F304C" />
+                    <EntryCell Label="Email" Text="{Binding Path=Student.email}" Placeholder="  Insert Email" LabelColor="#0F304C" />
+                    <EntryCell Label="Day Of Birth" Text="{Binding Path=Student.dayOfBirth}" Placeholder="  Insert Day of Birth" LabelColor="#0F304C" />
+                    <EntryCell Label="Gender" Text="{Binding Path=Student.gender}" Placeholder="  Insert Gender" LabelColor="#0F304C" />
+                    <EntryCell Label="ID Number" Text="{Binding Path=Student.idNumber}" Placeholder="  Insert ID Number" LabelColor="#0F304C" />
+                    <EntryCell Label="Password" Text="{Binding Path=Student.password}" Placeholder="  Insert Password" LabelColor="#0F304C" />
+                    <EntryCell Label="Account Type" Text="{Binding Path=Student.accountType}" Placeholder="  Insert Account Type" LabelColor="#0F304C" />
+                    <EntryCell Label="Course ID" Text="{Binding Path=Student.courseID}" Placeholder="  Insert CourseID" LabelColor="#0F304C" />
+			    </TableSection>
+			<TableSection Title="Address Informations" TextColor="#F2C651">
+				    <EntryCell Label="Street" Text="{Binding Path=Student.street}" Placeholder="  Insert Street" LabelColor="#0F304C" />
+                    <EntryCell Label="Postcode" Text="{Binding Path=Student.postCode}" Placeholder="  Insert PostCode" LabelColor="#0F304C" />
+                    <EntryCell Label="City" Text="{Binding Path=Student.city}" Placeholder="  Insert City" LabelColor="#0F304C" />
+			    </TableSection>
+                <TableSection Title="Account Informations" TextColor="#F2C651">
+				    <EntryCell Label="Payment Status" Text="{Binding Path=Student.status}" Placeholder="  Insert Status Payment" LabelColor="#0F304C" />
+			    </TableSection>
+			    <TableSection>
+				    <ViewCell>
+					    <Button Text="Save" Command="{Binding SaveCommand}" />
+				    </ViewCell>
+			    </TableSection>
+		    </TableRoot>
+	    </TableView>
+    </StackLayout>
+</ContentPage>

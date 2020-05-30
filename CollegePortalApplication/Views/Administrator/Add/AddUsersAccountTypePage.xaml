@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    Padding="0, 40, 0, 0"
+    BackgroundColor="#0F304C"
+    NavigationPage.HasNavigationBar="False"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CollegePortalApplication.Views.Administrator.Add.AddUsersAccountTypePage">
+
+    <Frame BackgroundColor="#0F304C" CornerRadius="0" HasShadow="False" >
+      
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+       
+            <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                
+                    <Button x:Name="back" Text="Back" Clicked="Back_Clicked"
+                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=1,Constant=10}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Factor=1, Property=Y, Constant=-20}"/>
+
+                    <Button x:Name="add" Text="Add" Clicked="add_Clicked"
+                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=1,Constant=-40}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Factor=1, Property=Y, Constant=-20}"/>
+
+                <Entry x:Name="accountType" WidthRequest="300" Placeholder="Account type ID"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.5,Constant=-147.5}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=add , Factor=1, Property=Y, Constant=50}">
+                    <Entry.Triggers>
+                        <DataTrigger TargetType="Entry"
+                             Binding="{Binding UserIDLogin}"
+                             Value="true">
+                            <Setter Property="IsEnabled" Value="false"/>
+                        </DataTrigger>
+                    </Entry.Triggers>
+                </Entry>
+                <Entry  x:Name="accountName" WidthRequest="300" Placeholder="Account Name"
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.5,Constant=-147.5}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=add, Factor=1, Property=Y, Constant=100}">
+                    <Entry.Triggers>
+                        <DataTrigger TargetType="Entry"
+                             Binding="{Binding AccountName}"
+                             Value="true">
+                            <Setter Property="IsEnabled" Value="false"/>
+                        </DataTrigger>
+                    </Entry.Triggers>
+                </Entry>
+              </RelativeLayout>
+    </StackLayout>           
+    </Frame>
+</ContentPage>

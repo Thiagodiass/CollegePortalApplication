@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage x:Name="page"
+    Padding="0, 40, 0, 0"
+    BackgroundColor="#0F304C"
+    NavigationPage.HasNavigationBar="False"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CollegePortalApplication.Views.LoginPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="button" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#143D60"/>
+                <Setter Property="TextColor" Value="#FFFFFF"/>
+                <Setter Property="BorderRadius" Value="5"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="WidthRequest" Value="300"/>
+                <Setter Property="HeightRequest" Value="40"/>
+            </Style>
+            <Style x:Key="primaryButton" TargetType="Button" BasedOn="{StaticResource button}">
+                <Setter Property="BackgroundColor" Value="#F2C651"/>
+            </Style>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <Frame BackgroundColor="#0F304C" CornerRadius="12" HasShadow="False"  >
+      
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+       
+            <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                
+                    <Button x:Name="Back" Text="Back" Clicked="Back_Clicked"
+                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=1,Constant=10}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Factor=1, Property=Y, Constant=-10}"/>
+                    
+                    <Image x:Name="image" Aspect="Fill"  WidthRequest="150" HeightRequest="150"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,ElementName=password,Constant=-300,Factor=1,Property=Y}"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=X,Factor=0.5,Constant=112.5}"/>
+                    
+                    <Entry Text="{Binding Path=Login.login}" WidthRequest="300" Placeholder="User ID"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.5,Constant=-147.5}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=password , Factor=1, Property=Y, Constant=-50}">
+                    <!--<Entry.Triggers>
+                        <DataTrigger TargetType="Entry"
+                             Binding="{Binding UserIDLogin}"
+                             Value="true">
+                            <Setter Property="IsEnabled" Value="false"/>
+                        </DataTrigger>
+                    </Entry.Triggers>-->
+                </Entry>
+                <Entry x:Name="password" Text="{Binding Path=Login.password}" WidthRequest="300" IsPassword="True" Placeholder="Password"
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.5,Constant=-147.5}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=login, Factor=1, Property=Y, Constant=-50}">
+                    <!--<Entry.Triggers>
+                        <DataTrigger TargetType="Entry"
+                             Binding="{Binding PasswordLogin}"
+                             Value="true">
+                            <Setter Property="IsEnabled" Value="false"/>
+                        </DataTrigger>
+                    </Entry.Triggers>-->
+                </Entry>
+
+                    <Button x:Name="login" Text="LOGIN" Command="{Binding LoginCommand}"
+                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.5,Constant=-147.5}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Factor=0.8, Property=Height, Constant=-50}"
+                            Style="{StaticResource primaryButton}" 
+                            />
+
+            </RelativeLayout>
+        </StackLayout>
+      </Frame>
+     
+</ContentPage>

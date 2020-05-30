@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage x:Name="page"
+    Padding="0, 40, 0, 0"
+    BackgroundColor="#0F304C"
+    NavigationPage.HasNavigationBar="False"
+    xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CollegePortalApplication.Views.Administrator.StudentOverviewPage">
+    <Frame BackgroundColor="#0F304C" CornerRadius="0" HasShadow="False" >
+      
+    <StackLayout BackgroundColor="#0F304C" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+       
+            <RelativeLayout BackgroundColor="#0F304C" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                
+                    <Button x:Name="back" Text="Back" Clicked="Back_Clicked"
+                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Factor=1,Constant=10}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Factor=1, Property=Y, Constant=-20}"/>
+                
+                    <Button Text="Add" Command="{Binding AddStudentOverview}"
+                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,  Factor=1,Constant=-40}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Factor=1, Property=Y, Constant=-20}"/>
+                
+                    <StackLayout BackgroundColor="#0F304C"
+                                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Y,Factor=1,Constant=20}">
+                    <StackLayout>
+                    <Label Text="             StudentID             ModuleID       Attendance" FontSize="10" TextColor="#F2C651" FontAttributes="Bold" HorizontalOptions="StartAndExpand" Padding="10,0,0,0"/>
+                </StackLayout>
+                <StackLayout RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-200}">
+                    <Label Text="" TextColor="#F2C651" FontAttributes="Bold" HorizontalOptions="End" Padding="0,0,0,0"/>
+                </StackLayout>
+                        <ListView BackgroundColor="#0F304C"
+                            ItemsSource="{Binding StudentOverviews}" 
+			                SelectedItem="{Binding SelectedStudentOverview, Mode=TwoWay}"
+			                ItemSelected="OnContactSelected">
+                            
+                         <ListView.ItemTemplate>
+                            <DataTemplate>
+				                <TextCell TextColor="#F2C651" Text="{Binding Display}">
+					                <TextCell.ContextActions>
+						                <MenuItem 
+							                Text="Delete" 
+							                IsDestructive="true" 
+							                Command="{Binding Source={x:Reference page}, Path=ViewModel.DeleteStudentOverview}"
+							                CommandParameter="{Binding .}" />
+					                </TextCell.ContextActions>
+				                </TextCell>
+			                </DataTemplate>
+                         </ListView.ItemTemplate>
+                        </ListView>
+
+                    </StackLayout>
+                  
+            </RelativeLayout>
+        </StackLayout>
+      </Frame>
+</ContentPage>
